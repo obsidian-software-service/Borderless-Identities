@@ -70,3 +70,4 @@ public
 .env.development
 .env.production
 .vscode/settings.json
+.prettierrc

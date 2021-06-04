@@ -1,11 +1,11 @@
 {
-  "name": "contentful-starter-gatsby-blog",
-  "description": "Contentful Gatsby Starter Blog",
+  "name": "borderless-identities",
+  "description": "Web Borderless Identity",
   "private": true,
-  "version": "0.0.1",
-  "author": "Contentful <opensource@contentful.com>",
+  "version": "1.0.0",
+  "author": "Roger Bogado <roger.bogado.coverzola@gmail.com>",
   "bugs": {
-    "url": "https://github.com/contentful/starter-gatsby-blog/issues"
+    "url": "https://github.com/obsidian-software-service/Borderless-Identities.git"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
@@ -13,7 +13,9 @@
     "@material-ui/styles": "^4.11.4",
     "gatsby": "^2.23.9",
     "gatsby-image": "^2.4.8",
+    "gatsby-plugin-material-ui": "^3.0.1",
     "gatsby-plugin-react-helmet": "^3.3.5",
+    "gatsby-plugin-react-svg": "^3.0.1",
     "gatsby-plugin-sharp": "^2.6.43",
     "gatsby-source-contentful": "^2.3.17",
     "gatsby-transformer-remark": "^2.8.18",
