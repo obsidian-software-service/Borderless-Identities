@@ -21,14 +21,8 @@ See our [official Contentful getting started guide](https://www.contentful.com/d
 ### Get the source code and install dependencies.
 
 ```
-$ git clone https://github.com/contentful/starter-gatsby-blog.git
+$ git clone https://github.com/obsidian-software-service/Borderless-Identities.git
 $ npm install
-```
-
-Or use the [Gatsby CLI](https://www.npmjs.com/package/gatsby-cli).
-
-```
-$ gatsby new contentful-starter-blog https://github.com/contentful/starter-gatsby-blog/
 ```
 
 ### Set up of the needed content model and create a configuration file
