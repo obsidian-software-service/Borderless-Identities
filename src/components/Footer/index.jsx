@@ -3,14 +3,14 @@ import { Link } from 'gatsby';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Typography, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import PrimaryInput from '../PrimaryInput';
+
 import FooterNavBar from './FooterNavBar';
 import OctosoftLogo from '../../assets/logoOctosoft.svg';
 import BottomFooter from './BottomFooter';
 
 const useStyles = makeStyles((theme) => ({
   root: { margin: 0, padding: 0, maxWidth: 'none' },
-  icon: { width: 100, height: 100 },
+  icon: { width: 100, height: 100, fill: '#007bff' },
   toolbar: {
     boxShadow: 'inset 0 2px 3px #ccc',
     padding: theme.spacing(4),
@@ -49,7 +49,6 @@ const Footer = () => {
     query FooterQuery {
       contentfulFooter {
         mail
-        copyright
         socialMedia {
           Facebook
           GitHub
@@ -62,16 +61,11 @@ const Footer = () => {
     }
   `);
 
-  const { mail, copyright, socialMedia } = footer.contentfulFooter;
+  const { mail, socialMedia } = footer.contentfulFooter;
 
-  const {
-    Facebook,
-    GitHub,
-    Instagram,
-    Twitch,
-    Twitter,
-    Youtube,
-  } = socialMedia.values().next().value;
+  const { Facebook, GitHub, Instagram, Twitch, Twitter, Youtube } = socialMedia
+    .values()
+    .next().value;
 
   return (
     <>
@@ -97,9 +91,7 @@ const Footer = () => {
             to="https://octosoftprofessionals.com/"
           >
             <OctosoftLogo className={classes.icon} />
-            <Typography className={classes.sectionTitle}>
-              OCTOSOFT
-            </Typography>
+            <Typography className={classes.sectionTitle}>OCTOSOFT</Typography>
           </Link>
         </Grid>
 
@@ -115,47 +107,16 @@ const Footer = () => {
           <FooterNavBar />
         </Grid>
 
-        <Grid
-          item
-          xs={12}
-          md={3}
-          container
-          direction="column"
-          className={classes.section}
-        >
-          <Typography variant="h3" className={classes.sectionTitle}>
-            SUSCRÍBITE
-          </Typography>
-          <Typography className={classes.linkText}>
-            No se pierda nuestras últimas novedades!!!
-          </Typography>
-          <Grid item xs={9} className={classes.formContainer}>
-            <form>
-              <input type="hidden" name="form-name" value="contact" />
-              <PrimaryInput
-                id="EmailInput"
-                value={email}
-                name="email"
-                onChange={({ target }) => setEmail(target.value)}
-                label="Tu Email"
-                variant="filled"
-                type="email"
-                required
-              />
-            </form>
-          </Grid>
-        </Grid>
+        <BottomFooter
+          mail={mail}
+          facebook={Facebook}
+          instagram={Instagram}
+          gitHub={GitHub}
+          youtube={Youtube}
+          twitter={Twitter}
+          twitch={Twitch}
+        />
       </Grid>
-      <BottomFooter
-        mail={mail}
-        copyright={copyright}
-        facebook={Facebook}
-        instagram={Instagram}
-        gitHub={GitHub}
-        youtube={Youtube}
-        twitter={Twitter}
-        twitch={Twitch}
-      />
     </>
   );
 };

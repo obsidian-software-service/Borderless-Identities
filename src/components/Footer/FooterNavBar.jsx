@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Grid } from '@material-ui/core';
-import KorovaIcon from '../../assets/logo_icono2.svg';
 
 const useStyles = makeStyles((theme) => ({
   icon: { width: 100, height: 100 },
@@ -32,70 +31,42 @@ const FooterBar = () => {
   const classes = useStyles();
   return (
     <>
-      <Grid
-        item
-        container
-        direction="row"
-        alignItems="center"
-        justify="center"
-      >
-        <KorovaIcon className={classes.icon} />
+      <Grid item container direction="row" alignItems="center" justify="center">
         <Typography variant="h3" className={classes.sectionTitle}>
-          KOROVA DIGITAL
+          BORDERLESS IDENTITIES
         </Typography>
       </Grid>
 
       <Grid item xs={9} container justify="space-around">
         <Link className={classes.link} to="/">
-          <Typography
-            variant="subtitle1"
-            className={classes.linkText}
-          >
+          <Typography variant="subtitle1" className={classes.linkText}>
             Home
           </Typography>
         </Link>
 
-        <Link
-          className={classes.link}
-          to="blog/static-sites-are-great"
-        >
-          <Typography
-            variant="subtitle1"
-            className={classes.linkText}
-          >
+        <Link className={classes.link} to="blog/static-sites-are-great">
+          <Typography variant="subtitle1" className={classes.linkText}>
             Quiénes somos?
           </Typography>
         </Link>
 
         <Link className={classes.link} to="/">
-          <Typography
-            variant="subtitle1"
-            className={classes.linkText}
-          >
+          <Typography variant="subtitle1" className={classes.linkText}>
             Eventos
           </Typography>
         </Link>
         <Link className={classes.link} to="/">
-          <Typography
-            variant="subtitle1"
-            className={classes.linkText}
-          >
+          <Typography variant="subtitle1" className={classes.linkText}>
             COVID-19
           </Typography>
         </Link>
         <Link className={classes.link} to="/">
-          <Typography
-            variant="subtitle1"
-            className={classes.linkText}
-          >
+          <Typography variant="subtitle1" className={classes.linkText}>
             Membresia
           </Typography>
         </Link>
         <Link className={classes.link} to="/contact">
-          <Typography
-            variant="subtitle1"
-            className={classes.linkText}
-          >
+          <Typography variant="subtitle1" className={classes.linkText}>
             Contactanos
           </Typography>
         </Link>

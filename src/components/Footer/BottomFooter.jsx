@@ -59,20 +59,20 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: '600',
   },
   Youtube: {
-    display: (props) => (!!props.youtube ? 'block' : 'none'),
+    display: (props) => (props.youtube ? 'block' : 'none'),
   },
   Facebook: {
-    display: (props) => (!!props.facebook ? 'block' : 'none'),
+    display: (props) => (props.facebook ? 'block' : 'none'),
   },
   Instagram: {
-    display: (props) => (!!props.instagram ? 'block' : 'none'),
+    display: (props) => (props.instagram ? 'block' : 'none'),
   },
-  GitHub: { display: (props) => (!!props.gitHub ? 'block' : 'none') },
+  GitHub: { display: (props) => (props.gitHub ? 'block' : 'none') },
   Twitter: {
-    display: (props) => (!!props.twitter ? 'block' : 'none'),
+    display: (props) => (props.twitter ? 'block' : 'none'),
   },
   Twitch: {
-    display: (props) => (!!props.twitch ? 'block' : 'none'),
+    display: (props) => (props.twitch ? 'block' : 'none'),
   },
 }));
 const ItemSocial = ({ children }) => {
@@ -117,14 +117,10 @@ const BottomFooter = ({
           justify="center"
           className={classes.section}
         >
-          <Typography className={classes.bottomText}>
-            {copyright}
-          </Typography>
+          <Typography className={classes.bottomText}>{copyright}</Typography>
         </Grid>
         <Grid container item md={4} justify="center">
-          <Typography className={classes.bottomText}>
-            Email: {mail}
-          </Typography>
+          <Typography className={classes.bottomText}>Email: {mail}</Typography>
         </Grid>
         <Grid container item md={4} justify="center">
           <Tooltip title="Twitter" classes={classes}>
