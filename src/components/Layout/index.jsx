@@ -1,21 +1,18 @@
 import React from 'react';
-import './base.css';
-import Container from './container';
-import Navigation from './navigation';
+import { ThemeProvider } from '@material-ui/core/styles';
 import Footer from './Footer';
+import '../Style/base.css';
+import { theme } from '../Style';
 
 class Template extends React.Component {
   render() {
     const { children } = this.props;
 
     return (
-      <>
-        <Container>
-          <Navigation />
-          {children}
-        </Container>
+      <ThemeProvider theme={theme}>
+        <main>{children}</main>
         <Footer />
-      </>
+      </ThemeProvider>
     );
   }
 }

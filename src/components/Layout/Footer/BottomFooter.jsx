@@ -10,7 +10,6 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 
 const useStyles = makeStyles((theme) => ({
   bottomBar: {
-    height: 9 * theme.spacing(5),
     background: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
     padding: theme.spacing(5),
@@ -26,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '14px',
     color: theme.palette.primary.contrastText,
     fontFamily: theme.typography.fontFamily,
-    marginBottom: theme.spacing(4),
+    textAlign: 'center',
   },
   sectionSocial: {},
   itemSocial: {
@@ -103,74 +102,63 @@ const BottomFooter = ({
     twitch,
   });
   return (
-    <>
-      <Grid
-        container
-        alignItems="center"
-        wrap="wrap"
-        className={classes.bottomBar}
-      >
-        <Grid
-          container
-          item
-          md={4}
-          justify="center"
-          className={classes.section}
-        >
-          <Typography className={classes.bottomText}>{copyright}</Typography>
-        </Grid>
-        <Grid container item md={4} justify="center">
-          <Typography className={classes.bottomText}>Email: {mail}</Typography>
-        </Grid>
-        <Grid container item md={4} justify="center">
-          <Tooltip title="Twitter" classes={classes}>
-            <Grid item xs={2} className={classes.Twitter}>
-              <Link className={classes.link} to={twitter}>
-                <ItemSocial>
-                  <TwitterIcon />
-                </ItemSocial>
-              </Link>
-            </Grid>
-          </Tooltip>
-          <Tooltip title="Youtube" classes={classes}>
-            <Grid item xs={2} className={classes.Youtube}>
-              <Link className={classes.link} to={youtube}>
-                <ItemSocial>
-                  <YouTubeIcon />
-                </ItemSocial>
-              </Link>
-            </Grid>
-          </Tooltip>
-          <Tooltip title="Facebook" classes={classes}>
-            <Grid item xs={2} className={classes.Facebook}>
-              <Link className={classes.link} to={facebook}>
-                <ItemSocial>
-                  <FacebookIcon />
-                </ItemSocial>
-              </Link>
-            </Grid>
-          </Tooltip>
-          <Tooltip title="Instagram" classes={classes}>
-            <Grid item xs={2} className={classes.Instagram}>
-              <Link className={classes.link} to={instagram}>
-                <ItemSocial>
-                  <InstagramIcon />
-                </ItemSocial>
-              </Link>
-            </Grid>
-          </Tooltip>
-          <Tooltip title="GitHub" classes={classes}>
-            <Grid item xs={2} className={classes.GitHub}>
-              <Link className={classes.link} to={gitHub}>
-                <ItemSocial>
-                  <GitHubIcon />
-                </ItemSocial>
-              </Link>
-            </Grid>
-          </Tooltip>
-        </Grid>
+    <Grid
+      container
+      justify="space-around"
+      alignItems="center"
+      className={classes.bottomBar}
+    >
+      <Grid item md={4}>
+        <Typography className={classes.bottomText}>Email: {mail}</Typography>
       </Grid>
-    </>
+      <Grid container item md={4} justify="center" alignItems="center">
+        <Tooltip title="Twitter" classes={classes}>
+          <Grid item xs={2} className={classes.Twitter}>
+            <Link className={classes.link} to={twitter}>
+              <ItemSocial>
+                <TwitterIcon />
+              </ItemSocial>
+            </Link>
+          </Grid>
+        </Tooltip>
+        <Tooltip title="Youtube" classes={classes}>
+          <Grid item xs={2} className={classes.Youtube}>
+            <Link className={classes.link} to={youtube}>
+              <ItemSocial>
+                <YouTubeIcon />
+              </ItemSocial>
+            </Link>
+          </Grid>
+        </Tooltip>
+        <Tooltip title="Facebook" classes={classes}>
+          <Grid item xs={2} className={classes.Facebook}>
+            <Link className={classes.link} to={facebook}>
+              <ItemSocial>
+                <FacebookIcon />
+              </ItemSocial>
+            </Link>
+          </Grid>
+        </Tooltip>
+        <Tooltip title="Instagram" classes={classes}>
+          <Grid item xs={2} className={classes.Instagram}>
+            <Link className={classes.link} to={instagram}>
+              <ItemSocial>
+                <InstagramIcon />
+              </ItemSocial>
+            </Link>
+          </Grid>
+        </Tooltip>
+        <Tooltip title="GitHub" classes={classes}>
+          <Grid item xs={2} className={classes.GitHub}>
+            <Link className={classes.link} to={gitHub}>
+              <ItemSocial>
+                <GitHubIcon />
+              </ItemSocial>
+            </Link>
+          </Grid>
+        </Tooltip>
+      </Grid>
+    </Grid>
   );
 };
 

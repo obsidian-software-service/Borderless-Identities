@@ -1,19 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Typography, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import FooterNavBar from './FooterNavBar';
-import OctosoftLogo from '../../assets/logoOctosoft.svg';
 import BottomFooter from './BottomFooter';
+import OctosoftLogo from '../../../assets/logoOctosoft.svg';
 
 const useStyles = makeStyles((theme) => ({
   root: { margin: 0, padding: 0, maxWidth: 'none' },
   icon: { width: 100, height: 100, fill: '#007bff' },
   toolbar: {
     boxShadow: 'inset 0 2px 3px #ccc',
-    padding: theme.spacing(4),
     color: theme.palette.main,
     background: theme.palette.primary.contrastText,
     '@media (max-width: 576px)': { flexDirection: 'column' },
@@ -43,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Footer = () => {
-  const [email, setEmail] = useState('');
   const classes = useStyles();
   const footer = useStaticQuery(graphql`
     query FooterQuery {
